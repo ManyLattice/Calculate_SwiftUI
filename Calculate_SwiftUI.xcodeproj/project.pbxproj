@@ -15,6 +15,8 @@
 		8093B66E24D01D770083196D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8093B66D24D01D770083196D /* Preview Assets.xcassets */; };
 		8093B67124D01D770083196D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8093B66F24D01D770083196D /* LaunchScreen.storyboard */; };
 		8093B67C24D01D770083196D /* Calculate_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093B67B24D01D770083196D /* Calculate_SwiftUITests.swift */; };
+		8093B69524D027860083196D /* CalculateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093B69424D027860083196D /* CalculateButton.swift */; };
+		8093B69824D0301C0083196D /* CalculateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093B69724D0301C0083196D /* CalculateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		8093B67724D01D770083196D /* Calculate_SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Calculate_SwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8093B67B24D01D770083196D /* Calculate_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate_SwiftUITests.swift; sourceTree = "<group>"; };
 		8093B67D24D01D770083196D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8093B69424D027860083196D /* CalculateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateButton.swift; sourceTree = "<group>"; };
+		8093B69724D0301C0083196D /* CalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				8093B66124D01D740083196D /* AppDelegate.swift */,
 				8093B66324D01D740083196D /* SceneDelegate.swift */,
 				8093B66824D01D740083196D /* ContentView.swift */,
+				8093B69624D0300B0083196D /* View */,
+				8093B69324D027660083196D /* Buttons */,
 				8093B66A24D01D770083196D /* Assets.xcassets */,
 				8093B66F24D01D770083196D /* LaunchScreen.storyboard */,
 				8093B67224D01D770083196D /* Info.plist */,
@@ -108,6 +114,22 @@
 				8093B67D24D01D770083196D /* Info.plist */,
 			);
 			path = Calculate_SwiftUITests;
+			sourceTree = "<group>";
+		};
+		8093B69324D027660083196D /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				8093B69424D027860083196D /* CalculateButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		8093B69624D0300B0083196D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8093B69724D0301C0083196D /* CalculateView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +234,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8093B66724D01D740083196D /* Calculate_SwiftUI.xcdatamodeld in Sources */,
+				8093B69824D0301C0083196D /* CalculateView.swift in Sources */,
 				8093B66224D01D740083196D /* AppDelegate.swift in Sources */,
 				8093B66924D01D740083196D /* ContentView.swift in Sources */,
+				8093B69524D027860083196D /* CalculateButton.swift in Sources */,
 				8093B66424D01D740083196D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

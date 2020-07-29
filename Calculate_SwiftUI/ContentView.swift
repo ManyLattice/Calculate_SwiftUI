@@ -9,8 +9,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
     var body: some View {
-        Text("Hello, World!")
+        
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
+            VStack {
+                Text("0")
+                    .foregroundColor(Color.white)
+                    .multilineTextAlignment(.trailing)
+                    .padding(.horizontal)
+                    .frame(width: nil)
+                    
+                ForEach(0..<4) { _ in
+                    CalculateView()
+                }
+                CalculateView(countButton: 2)
+            }
+            .padding()
+        }
+        
     }
 }
 
