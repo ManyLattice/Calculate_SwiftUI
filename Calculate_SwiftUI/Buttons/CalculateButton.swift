@@ -25,10 +25,10 @@ struct CalculateButton: View {
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
             }
-            .frame(width: 50, height: 50, alignment: .center)
+            .frame(width: 80, height: 80, alignment: .center)
         }
         .background(color)
-        .clipShape(Circle())
+        .clipShape(Circle())        
         
         
     }

@@ -13,21 +13,25 @@ struct ContentView: View {
     
     var body: some View {
         
-        ZStack {
+        ZStack(alignment: .bottom) {
             Color.black.edgesIgnoringSafeArea(.all)
-            VStack {
-                Text("0")
-                    .foregroundColor(Color.white)
-                    .multilineTextAlignment(.trailing)
-                    .padding(.horizontal)
-                    .frame(width: nil)
-                    
+            VStack(spacing: 12) {
+                HStack {
+                    Spacer()
+                    Text("0")
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.trailing)
+                        .padding(.horizontal)
+                        .frame(width: nil)
+                        .font(Font.largeTitle)
+                }.padding()
+                
                 ForEach(0..<4) { _ in
                     CalculateView()
                 }
+                .padding(.horizontal)
                 CalculateView(countButton: 2)
             }
-            .padding()
         }
         
     }

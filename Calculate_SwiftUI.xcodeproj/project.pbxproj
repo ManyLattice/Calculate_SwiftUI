@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8076538F24D4880200A0B61E /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076538E24D4880200A0B61E /* Variables.swift */; };
 		8093B66224D01D740083196D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093B66124D01D740083196D /* AppDelegate.swift */; };
 		8093B66424D01D740083196D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093B66324D01D740083196D /* SceneDelegate.swift */; };
 		8093B66724D01D740083196D /* Calculate_SwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8093B66524D01D740083196D /* Calculate_SwiftUI.xcdatamodeld */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8076538E24D4880200A0B61E /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		8093B65E24D01D740083196D /* Calculate_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculate_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8093B66124D01D740083196D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8093B66324D01D740083196D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8076538D24D487EF00A0B61E /* Additional */ = {
+			isa = PBXGroup;
+			children = (
+				8076538E24D4880200A0B61E /* Variables.swift */,
+			);
+			path = Additional;
+			sourceTree = "<group>";
+		};
 		8093B65524D01D740083196D = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +98,7 @@
 				8093B66124D01D740083196D /* AppDelegate.swift */,
 				8093B66324D01D740083196D /* SceneDelegate.swift */,
 				8093B66824D01D740083196D /* ContentView.swift */,
+				8076538D24D487EF00A0B61E /* Additional */,
 				8093B69624D0300B0083196D /* View */,
 				8093B69324D027660083196D /* Buttons */,
 				8093B66A24D01D770083196D /* Assets.xcassets */,
@@ -234,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8093B66724D01D740083196D /* Calculate_SwiftUI.xcdatamodeld in Sources */,
+				8076538F24D4880200A0B61E /* Variables.swift in Sources */,
 				8093B69824D0301C0083196D /* CalculateView.swift in Sources */,
 				8093B66224D01D740083196D /* AppDelegate.swift in Sources */,
 				8093B66924D01D740083196D /* ContentView.swift in Sources */,
