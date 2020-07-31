@@ -18,6 +18,8 @@ struct ContentView: View {
         5: ["0", ",", "="]
     ]
     
+    @EnvironmentObject var display: CalculateDisplayObservable
+    
     var body: some View {
         
         ZStack(alignment: .bottom) {
@@ -27,7 +29,7 @@ struct ContentView: View {
                 
                 HStack {
                     Spacer()
-                    Text("0")
+                    Text("\(self.display.sum)")
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.trailing)
                         .padding(.horizontal)
@@ -41,6 +43,7 @@ struct ContentView: View {
                 
                 
             }
+            .padding(.vertical)
             
         }
         
@@ -49,6 +52,18 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ZStack {
+                Color.black.edgesIgnoringSafeArea(.all)
+                ContentView().environmentObject(CalculateDisplayObservable())
+            }
+            .previewDevice("iPhone X")
+            
+            ZStack {
+                Color.black.edgesIgnoringSafeArea(.all)
+                ContentView().environmentObject(CalculateDisplayObservable())
+            }
+            .previewDevice("iPhone 8")
+        }
     }
 }

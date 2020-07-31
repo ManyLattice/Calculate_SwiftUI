@@ -12,6 +12,7 @@ struct CalculateButton: View {
     
     var value: String = "0"
     var color: Color = Color(#colorLiteral(red: 0.1953498125, green: 0.2001108527, blue: 0.204348743, alpha: 1))
+    var width: CGFloat = 80
     var tapHandler: ((Int) -> Void)
     
     var body: some View {
@@ -25,13 +26,14 @@ struct CalculateButton: View {
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
             }
-            .frame(width: 80, height: 80, alignment: .center)
+            .frame(width: self.width, height: 80, alignment: .center)
+            .background(self.color)
+            .cornerRadius(40)
         }
-        .background(color)
-        .clipShape(Circle())        
         
         
     }
+    
 }
 
 struct CalculateButton_Previews: PreviewProvider {

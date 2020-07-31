@@ -17,7 +17,7 @@ struct CalculateView: View {
     var body: some View {
         HStack() {
             ForEach(0..<self.countButton) { number in
-                CalculateButton(value: self.value[number], color: self.color) { (number) in
+                CalculateButton(value: self.value[number], color: self.color, width: self.getWidthButton(number)) { (number) in
                     print(number)
                 }
             }
@@ -27,6 +27,12 @@ struct CalculateView: View {
         }
         
     }
+    
+    private func getWidthButton(_ number: Int) -> CGFloat {
+        guard value.indices.contains(number) else { return 80 }
+        return value[number] == "0" ? 80 * 2 : 80
+    }
+    
 }
 
 struct CalculateView_Previews: PreviewProvider {
