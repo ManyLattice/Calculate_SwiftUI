@@ -10,12 +10,21 @@ import SwiftUI
 
 struct ContentView: View {
     
+    let buttons: [Int: [String]] = [
+        0: ["AC", "+/-", "%", "÷"],
+        1: ["7", "8", "9", "X"],
+        3: ["4", "5", "6", "-"],
+        4: ["1", "2", "3", "+"],
+        5: ["0", ",", "="]
+    ]
     
     var body: some View {
         
         ZStack(alignment: .bottom) {
             Color.black.edgesIgnoringSafeArea(.all)
+            
             VStack(spacing: 12) {
+                
                 HStack {
                     Spacer()
                     Text("0")
@@ -26,12 +35,13 @@ struct ContentView: View {
                         .font(Font.largeTitle)
                 }.padding()
                 
-                ForEach(0..<4) { _ in
-                    CalculateView()
+                ForEach(buttons.keys.sorted(), id: \.self) { key in
+                    CalculateView(countButton: self.buttons[key]!.count - 1, value: self.buttons[key]!)
                 }
-                .padding(.horizontal)
-                CalculateView(countButton: 2)
+                
+                
             }
+            
         }
         
     }

@@ -12,15 +12,16 @@ struct CalculateView: View {
     
     var color: Color = Color(#colorLiteral(red: 0.1953498125, green: 0.2001108527, blue: 0.204348743, alpha: 1))
     var countButton: Int = 3
+    var value = ["1", "2", "3", "+"]
     
     var body: some View {
         HStack() {
             ForEach(0..<self.countButton) { number in
-                CalculateButton(value: String(number), color: self.color) { (number) in
+                CalculateButton(value: self.value[number], color: self.color) { (number) in
                     print(number)
                 }
             }
-            CalculateButton(value: "+",color: .orange) { (number) in
+            CalculateButton(value: value.last!,color: .orange) { (number) in
                 print(number)
             }
         }
