@@ -10,6 +10,8 @@ import SwiftUI
 
 struct CalculateView: View {
     
+    @EnvironmentObject var display: CalculateDisplayObservable
+    
     var color: Color = Color(#colorLiteral(red: 0.1953498125, green: 0.2001108527, blue: 0.204348743, alpha: 1))
     var countButton: Int = 3
     var value = ["1", "2", "3", "+"]
@@ -17,12 +19,12 @@ struct CalculateView: View {
     var body: some View {
         HStack() {
             ForEach(0..<self.countButton) { number in
-                CalculateButton(value: self.value[number], color: self.color, width: self.getWidthButton(number)) { (number) in
-                    print(number)
+                CalculateButton(value: self.value[number], color: self.color, width: self.getWidthButton(number)) { (value) in
+                    self.setDisplaySum(value)
                 }
             }
-            CalculateButton(value: value.last!,color: .orange) { (number) in
-                print(number)
+            CalculateButton(value: value.last!,color: .orange) { (value) in
+                self.setDisplaySum(value)
             }
         }
         
@@ -31,6 +33,11 @@ struct CalculateView: View {
     private func getWidthButton(_ number: Int) -> CGFloat {
         guard value.indices.contains(number) else { return 80 }
         return value[number] == "0" ? 80 * 2 : 80
+    }
+    
+    private func setDisplaySum(_ value: String) {
+        guard let value = Int(value) else { return }
+        self.display.sum = value
     }
     
 }

@@ -13,22 +13,21 @@ struct CalculateButton: View {
     var value: String = "0"
     var color: Color = Color(#colorLiteral(red: 0.1953498125, green: 0.2001108527, blue: 0.204348743, alpha: 1))
     var width: CGFloat = 80
-    var tapHandler: ((Int) -> Void)
+    var tapHandler: ((String) -> Void)
     
     var body: some View {
         
         Group {
             Button(action: {
-                guard let value = Int(self.value) else { return }
-                self.tapHandler(value)
+                self.tapHandler(self.value)
             }) {
                 Text(value)
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
+                    .frame(width: self.width, height: 80, alignment: .center)
+                    .background(self.color)
+                    .cornerRadius(40)
             }
-            .frame(width: self.width, height: 80, alignment: .center)
-            .background(self.color)
-            .cornerRadius(40)
         }
         
         
@@ -38,8 +37,11 @@ struct CalculateButton: View {
 
 struct CalculateButton_Previews: PreviewProvider {
     static var previews: some View {
-        CalculateButton { (number) in
-            print(number)
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
+            CalculateButton { (number) in
+                print(number)
+            }
         }
     }
 }
