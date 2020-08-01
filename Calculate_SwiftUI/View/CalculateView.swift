@@ -47,10 +47,13 @@ struct CalculateView: View {
             self.display.sum += value
         }else {
             switch value {
-            case "+", "-", "X", "÷", "+/-", "AC":
+            case "+", "-", "X", "÷", "AC":
                 self.display.operation = value
                 self.display.templateSum = self.display.sum
                 self.display.sum = "0"
+            case "+/-":
+                guard let sum = Int(self.display.sum) else { return }
+                self.display.sum = "\(-sum)"
             case "=":
                 operation()
             default:
