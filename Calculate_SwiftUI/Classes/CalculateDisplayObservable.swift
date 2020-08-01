@@ -11,6 +11,16 @@ import SwiftUI
 
 class CalculateDisplayObservable: ObservableObject {
     
-    @Published var sum = 0
+    @Published var sum = "0" {
+        didSet {
+            if sum.count > 1 && sum.first == "0" && !sum.contains(",") {
+                sum.removeFirst()
+            }
+        }
+    }
+    
+    @Published var templateSum: String = ""
+    
+    @Published var operation: String = ""
     
 }

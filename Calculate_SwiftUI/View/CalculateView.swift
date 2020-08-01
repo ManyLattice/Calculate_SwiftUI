@@ -16,6 +16,8 @@ struct CalculateView: View {
     var countButton: Int = 3
     var value = ["1", "2", "3", "+"]
     
+    @State private var isShowAlert: Bool = false
+    
     var body: some View {
         HStack() {
             ForEach(0..<self.countButton) { number in
@@ -25,6 +27,11 @@ struct CalculateView: View {
             }
             CalculateButton(value: value.last!,color: .orange) { (value) in
                 self.setDisplaySum(value)
+            }
+            .alert(isPresented: $isShowAlert) { () -> Alert in
+                Alert(title: Text("Как ты это сделал?"), dismissButton: .default(Text("Ok")) {
+                    self.isShowAlert = false
+                    })
             }
         }
         
@@ -36,8 +43,46 @@ struct CalculateView: View {
     }
     
     private func setDisplaySum(_ value: String) {
-        guard let value = Int(value) else { return }
-        self.display.sum = value
+        if let _ = Int(value) {
+            self.display.sum += value
+        }else {
+            switch value {
+            case "+", "-", "X", "÷", "+/-", "AC":
+                self.display.operation = value
+                self.display.templateSum = self.display.sum
+                self.display.sum = "0"
+            case "=":
+                operation()
+            default:
+                isShowAlert = true
+            }
+        }
+    }
+    
+    private func operation() {
+        var operationSum: Int?
+        
+        guard let templateSum = Int(self.display.templateSum), let sum = Int(self.display.sum) else { return }
+        switch self.display.operation {
+        case "+":
+            operationSum = templateSum + sum
+        case "-":
+            operationSum = templateSum - sum
+        case "X":
+            operationSum = templateSum * sum
+        case "÷":
+            operationSum = templateSum / sum
+        case "+/-":
+            operationSum = -sum
+        case "AC":
+            self.display.templateSum.removeAll()
+            self.display.sum = "0"
+        default:
+            isShowAlert = true
+        }
+        
+        guard operationSum != nil else { return }
+        self.display.sum = "\(operationSum!)"
     }
     
 }
