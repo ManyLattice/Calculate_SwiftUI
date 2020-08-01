@@ -33,7 +33,6 @@ struct ContentView: View {
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.trailing)
                         .padding(.horizontal)
-                        .frame(width: nil)
                         .font(Font.largeTitle)
                 }.padding()
                 

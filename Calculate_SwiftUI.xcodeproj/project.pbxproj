@@ -98,9 +98,8 @@
 				8093B66124D01D740083196D /* AppDelegate.swift */,
 				8093B66324D01D740083196D /* SceneDelegate.swift */,
 				8093B66824D01D740083196D /* ContentView.swift */,
-				8076539024D4AAAC00A0B61E /* Classes */,
 				8093B69624D0300B0083196D /* View */,
-				8093B69324D027660083196D /* Buttons */,
+				8076539024D4AAAC00A0B61E /* Classes */,
 				8093B66A24D01D770083196D /* Assets.xcassets */,
 				8093B66F24D01D770083196D /* LaunchScreen.storyboard */,
 				8093B67224D01D770083196D /* Info.plist */,
@@ -138,6 +137,7 @@
 		8093B69624D0300B0083196D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8093B69324D027660083196D /* Buttons */,
 				8093B69724D0301C0083196D /* CalculateView.swift */,
 			);
 			path = View;
